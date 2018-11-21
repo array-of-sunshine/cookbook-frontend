@@ -11,12 +11,15 @@
           <li class="nav-item active">
           </li>
           <li class="nav-item">
+            <!-- <router-link to="/about">About</router-link> -->
             <a class="nav-link" href="/#/about">About</a>
           </li>
           <li class="nav-item">
+            <!-- <router-link to="/">Home</router-link> -->
             <a class="nav-link" href="/#/">Home</a>
           </li>
           <li class="nav-item">
+            <!-- <router-link to="/test">Test</router-link> -->
             <a class="nav-link" href="/#/test">Test</a>
           </li>
           <li class="nav-item dropdown">
