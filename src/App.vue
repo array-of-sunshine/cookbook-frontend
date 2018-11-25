@@ -11,8 +11,13 @@
           <li class="nav-item active">
           </li>
           <li class="nav-item">
-            <!-- <router-link to="/about">About</router-link> -->
-            <a class="nav-link" href="/#/about">About</a>
+            <a class="nav-link" href="/#/signup">Signup</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/#/login">Login</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/#/logout">Logout</a>
           </li>
           <li class="nav-item">
             <!-- <router-link to="/">Home</router-link> -->
