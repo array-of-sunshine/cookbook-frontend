@@ -3,11 +3,11 @@
     <div class="col-sm-4">
       <div class="card">
         <div class="card-body">
+
           <h5 class="card-title">Title: {{ recipe.title }}</h5>
           <p class="card-text">ingredients: {{ recipe.ingredients }}</p>
           <img v-bind:src="recipe.image_url" width="100px">
           <p class="card-text">directions: {{recipe.directions}}</p>
-          <a href="/show.html" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>

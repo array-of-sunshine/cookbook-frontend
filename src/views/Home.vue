@@ -7,11 +7,13 @@
         <div class="col-sm-4" v-for="recipe in recipes">
           <div class="card">
             <div class="card-body">
+              <h5 class="card-title">id: {{ recipe.id }}</h5>
               <h5 class="card-title">Title: {{ recipe.title }}</h5>
               <p class="card-text">ingredients: {{ recipe.ingredients }}</p>
               <img v-bind:src="recipe.image_url" width="100px">
               <p class="card-text">directions: {{recipe.directions}}</p>
-              <a href="/show.html" class="btn btn-primary">Go somewhere</a>
+              <!-- go to the show page -->
+              <a v-bind:href="'/#/recipes/' + recipe.id" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
@@ -24,6 +26,8 @@
 </style>
 
 <script>
+
+
 var axios = require('axios');
 export default {
   data: function() {
