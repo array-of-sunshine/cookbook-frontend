@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+
+
     <h1>{{ message }}</h1>
 
     <div class="container">
@@ -14,7 +16,33 @@
               <p class="card-text">directions: {{recipe.directions}}</p>
               <!-- go to the show page -->
               <a v-bind:href="'/#/recipes/' + recipe.id" class="btn btn-primary">Go somewhere</a>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" v-on:click="setCurrentRecipe(recipe)">
+                Launch demo modal
+              </button>
+
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>{{ currentRecipe.title }}</p>
+            <p>{{ currentRecipe.ingredients }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -33,7 +61,8 @@ export default {
   data: function() {
     return {
       message: "Welcome to Vue.js!",
-      recipes: []
+      recipes: [],
+      currentRecipe: {title: "", ingredients: ""}
     };
   },
   created: function() {
@@ -42,7 +71,12 @@ export default {
       this.recipes = response.data;
     }.bind(this))
   },
-  methods: {},
+  methods: {
+    setCurrentRecipe: function(inputRecipe) {
+      console.log(inputRecipe);
+      this.currentRecipe = inputRecipe;
+    }
+  },
   computed: {}
 };
 </script>
